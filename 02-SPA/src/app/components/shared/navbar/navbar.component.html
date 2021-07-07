@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Just an image -->
+  <nav class="navbar navbar-light bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="assets/img/A-64.png" width="30" height="30" alt="">
+    </a>
+  </nav>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['home']">Home</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['heroes']">Heroes</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['about']">About</a>
+      </li>
+    </ul>
+    <div class="form-inline my-2 my-lg-0">
+      <input #criteriaSearchHero (keyup.enter)="searchHero(criteriaSearchHero.value)" class="form-control mr-sm-2" type="search" placeholder="Search a hero" aria-label="Search">
+      <button (click)="searchHero(criteriaSearchHero.value)" class="btn btn-outline-primary my-2 my-sm-0" type="button">Search</button>
+    </div>
+  </div>
+</nav>

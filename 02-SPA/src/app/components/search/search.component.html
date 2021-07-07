@@ -1,0 +1,19 @@
+<h1>Criteria: <small>{{criteria}}</small></h1>
+<hr>
+
+<div class="row animated fadeIn fast" *ngIf="heroes.length === 0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      No results found, criteria: {{criteria}}
+    </div>
+  </div>
+</div>
+
+<div class="card-columns">
+  <app-card
+    (selectedHero)="getHero($event)"
+    [hero]="hero"
+    [position]="hero.id"
+    *ngFor="let hero of heroes; let index = index">
+  </app-card>
+</div>

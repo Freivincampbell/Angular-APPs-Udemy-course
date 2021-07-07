@@ -1,0 +1,12 @@
+<div class="card animated fadeIn" >
+  <img [src]="hero.img" class="card-img-top" [alt]="hero.name">
+  <div class="card-body">
+    <h5 class="card-title">{{hero.name}}</h5>
+    <p class="card-text">{{hero.bio}}</p>
+    <p class="card-text"><small class="text-muted">{{hero.release}}</small></p>
+    <button (click)="getHero()" type="button" class="btn btn-outline-primary btn-block">
+      More ...
+    </button>
+    <!--      <a [routerLink]="['/hero', index]" class="btn btn-outline-primary btn-block">More ...</a>-->
+  </div>
+</div>
