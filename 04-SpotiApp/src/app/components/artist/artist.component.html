@@ -1,0 +1,38 @@
+<app-loading [isLoading]="isLoading"></app-loading>
+
+<div class="row animated fadeIn" *ngIf="!isLoading">
+  <div class="col-2">
+    <img [src]="artist.images | manageNoimage" alt="" class="img-thumbnail img-circle">
+  </div>
+  <div class="col">
+    <h3>{{artist.name}}</h3>
+    <p><a [href]="artist?.external_urls?.spotify" target="_blank">See more datails...</a></p>
+  </div>
+  <div class="col-4 text-right">
+    <button routerLink="/search" class="btn btn-outline-danger">Get Back</button>
+  </div>
+</div>
+
+<div class="row m-5">
+  <div class="col">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Photo</th>
+        <th>Album</th>
+        <th>Song</th>
+        <th>Preview</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let topTrack of topTracks">
+        <td><img [src]="topTrack.album.images | manageNoimage" class="img-thumb" alt=""></td>
+        <td>{{topTrack.album.name}}</td>
+        <td>{{topTrack.name}}</td>
+        <td>
+          <audio [src]="topTrack.preview_url" controls></audio></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
