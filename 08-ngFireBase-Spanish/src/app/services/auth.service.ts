@@ -8,7 +8,7 @@ import { UsuarioModel } from '../models/usuario.model';
 })
 export class AuthService {
 	private url = 'https://identitytoolkit.googleapis.com/v1/accounts:';
-	private apiKey = 'AIzaSyDlPrYYHHoQTiSKvwMHjfrl_sWteqhSajM';
+	private apiKey = '';
 
 	constructor(private readonly http: HttpClient) {}
 
