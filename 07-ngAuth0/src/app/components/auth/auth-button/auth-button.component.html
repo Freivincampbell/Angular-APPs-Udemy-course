@@ -1,0 +1,18 @@
+<ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+  <app-user-profile></app-user-profile>
+  <button
+    class="btn btn-outline-danger my-2 my-sm-0"
+    (click)="auth.logout({ returnTo: document.location.origin })"
+  >
+    Log out
+  </button>
+</ng-container>
+
+<ng-template #loggedOut>
+  <button
+    class="btn btn-outline-success my-2 my-sm-0"
+    (click)="auth.loginWithRedirect()"
+  >
+    Log in
+  </button>
+</ng-template>
