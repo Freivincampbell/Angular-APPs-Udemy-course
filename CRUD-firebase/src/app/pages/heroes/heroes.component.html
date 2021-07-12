@@ -1,0 +1,57 @@
+<h1>Heroes List</h1>
+<hr>
+<div class="row">
+  <div class="col text-right">
+    <button routerLink="/hero/new" class="btn btn-primary">
+      <i class="fa fa-plus">Add Hero</i>
+    </button>
+  </div>
+</div>
+
+<table class="table mt-5 animated fadeIn">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Power</th>
+    <th scope="col">Alive</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let hero of heroes let i = index">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{hero.name}}</td>
+    <td>{{hero.power}}</td>
+    <td>
+      <label class="badge badge-success" [ngClass]="hero.isAlive ? 'badge-success' :'badge-danger'">
+        <i class="fa" [ngClass]="hero.isAlive ? 'fa-smile-wink' : 'fa-dizzy'"></i>
+      </label>
+    </td>
+    <td>
+      <button class="btn btn-info mr-1" [routerLink]="['/hero', hero.id]">
+        <i class="fa fa-pen"></i>
+      </button>
+      <button class="btn btn-info mr-1">
+        <i class="fa fa-trash"></i>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-warning text-center mt-3">
+  <h4 class="alert-heading">No records found</h4>
+  <p>
+    <i class="fa fa-exclamation fa-2x"></i>
+  </p>
+</div>
+<div class="alert alert-info text-center mt-3">
+  <h4 class="alert-heading">Loading</h4>
+  <p>
+    <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+  </p>
+  <p class="mb-0">
+    Wait Please!
+  </p>
+</div>
