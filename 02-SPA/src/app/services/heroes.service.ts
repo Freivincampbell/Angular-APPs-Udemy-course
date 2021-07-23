@@ -71,7 +71,7 @@ export class HeroesService {
 			const heroName = hero.name.toLowerCase();
 			if (heroName.indexOf(criteria) >= 0) {
 				hero.id = index;
-				heroesArr.push(hero);
+				heroesArr.push(hero); 
 			}
 		});
 

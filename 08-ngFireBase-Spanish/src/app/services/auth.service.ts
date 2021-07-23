@@ -8,7 +8,7 @@ import { UsuarioModel } from '../models/usuario.model';
 })
 export class AuthService {
 	private url = 'https://identitytoolkit.googleapis.com/v1/accounts:';
-	private apiKey = '';
+	private apiKey = 'AIzaSyBzx4sTM5P1vStxXd5jMfWEkJ2rVo5djgk';
 
 	constructor(private readonly http: HttpClient) {}
 
@@ -53,7 +53,6 @@ export class AuthService {
 	}
 
 	estaAutendicado(): boolean {
-		console.log(this.leerToken().length > 2);
 		return this.leerToken().length > 2;
 	}
 }
